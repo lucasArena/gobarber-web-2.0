@@ -1,9 +1,19 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
 
-function App() {
+import dark from './styles/themes/dark';
+import GlobalStyle from './styles/global';
+
+// import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
+
+const App: React.FC = () => {
   return (
-    <div></div>
+    <ThemeProvider theme={dark}>
+      <SignUp />
+      <GlobalStyle />
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
