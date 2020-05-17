@@ -7,5 +7,7 @@ export default {
     background: '#232129',
     text: '#F4EDE8',
     placeholder: '#666360',
+
+    error: '#c53030',
   },
 };
