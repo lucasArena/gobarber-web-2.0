@@ -1,22 +1,22 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
 import dark from './styles/themes/dark';
 import GlobalStyle from './styles/global';
 
-import ToastContainer from './components/ToastContainer';
-import SignIn from './pages/SignIn';
-// import SignUp from './pages/SignUp';
+import Routes from './routes';
 
-import { AuthProvider } from './hooks/AuthContext';
+import AppProvider from './hooks';
 
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={dark}>
-      <AuthProvider>
-        <SignIn />
-      </AuthProvider>
-      <ToastContainer />
+      <AppProvider>
+        <Router>
+          <Routes />
+        </Router>
+      </AppProvider>
       <GlobalStyle />
     </ThemeProvider>
   );
